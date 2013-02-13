@@ -5,9 +5,16 @@
 * with the same name atribute.
 * isset($someVar)
 */
+function format_phone($phone){
+	
+	return	'<a href="tel:'.$phone.'">('.substr($phone,0,3).') '.substr($phone,3,3).'-'.substr($phone,-4);
+	} 
+	
+function add($contact){
+	$contact_firstname = contact_firstname;
+}
 
-
-function input($name, $placeholder, $value=null) {
+function input($name, $placeholder, $value=null, $class='') {
 	if($value == null && isset($_SESSION['POST'][$name])){
 		$value = $_SESSION['POST'][$name];
 
@@ -15,19 +22,17 @@ function input($name, $placeholder, $value=null) {
 		unset($_SESSION['POST'][$name]);
 
 		if($value ==''){ // nothing was enterd as  hat value in the QS
-			$class = 'class="error"';
-		} else {$class='';
+			$class .= 'class="error"';
+		} else {$class .='';
 		}
 	} elseif($value != null){
-		$class = '';
+		$class .= '';
 	}else {
-
 		//error not present at initial loading of page \/
 		$value = '';
-		$class='';
 	}
 
-	$input = "<input $class type=\"text\" name=\"$name\" placeholder=\"$placeholder\"value=\"$value\"/>";
+	$input = "<input class=\"$class\" type=\"text\" name=\"$name\" placeholder=\"$placeholder\"value=\"$value\"/>";
 	return $input;
 }
 

@@ -3,15 +3,18 @@
 session_start();
 
 //import 'functions'
-require('functions.php');
+require('config/db.php');
+require('config/app.php');
+require('lib/functions.php');
+
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<!-- Bootstrap CSS-->
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css"/>
 		<!-- Mybands CSS -->
-		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
 		<title>MyeMovies</title>
 	</head>
 	<body>
