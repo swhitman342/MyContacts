@@ -8,10 +8,13 @@
 function format_phone($phone){
 	
 	return	'<a href="tel:'.$phone.'">('.substr($phone,0,3).') '.substr($phone,3,3).'-'.substr($phone,-4);
-	} 
+} 
 	
 function add($contact){
 	$contact_firstname = contact_firstname;
+	$contact_lastname = contact_lastname;
+	$contact_email = contact_email;
+	$contact_phone = contact_phone;
 }
 
 function input($name, $placeholder, $value=null, $class='') {
@@ -52,7 +55,7 @@ function dropdown($name, $options){
 		// if there is session form data for $name, AND its value
 		// is the same as the current array elemet, select it
 		if(isset($_SESSION['POST'][$name]) && $_SESSION['POST'][$name] == $value){
-			unset ($_SESSION['POST'][$name]);
+			//unset ($_SESSION['POST'][$name]);
 			$selected = 'selected="selected"';
 		} else {
 			$selected = '';

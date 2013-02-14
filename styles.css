@@ -10,12 +10,12 @@ header a {
 	display:block;
 	color:#000;
 	text-decoration:none;
-	-webkit-transition:-webkit-transform 10s, color 1s;
+	-webkit-transition:-webkit-transform .2s, color .5s;
 	padding-bottom:20px;
 }
 
 header a:hover {
-	-webkit-transform:skew(5deg,10deg);
+	-webkit-transform:skew(3deg,8deg);
 	color:#AD0000;
 	text-decoration:none;
 }
@@ -38,9 +38,9 @@ thead {
 	border-radius:25px;
 }
 th {
- 	color:#F1FFCC;
  	border-radius:25px;
 	padding:0px 150px 0px 150px;
+	color:#FAF75C;
  }
 
  .form-actions {
@@ -49,3 +49,11 @@ th {
  margin-left:370px;;
  margin-right:370px;
  }
+ 
+ th:hover {
+ color:#AD0303;
+-webkit-transition:color:5s;}
+
+td:hover {
+	background-color:#F1FCB1;
+}

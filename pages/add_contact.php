@@ -1,6 +1,8 @@
-session_start();
-<pre>POST: <?php print_r($_POST)?></pre>
+
+<!-- <pre>POST: <?php print_r($_POST)?></pre> -->
 <?php 
+session_start();
+//require once(./config/db.php);
 //include('pages/form_add_contact.php');
 $required = array (
 		'contact_firstname',
@@ -33,12 +35,12 @@ foreach($required as $r) {
 	}
 }
 
-// add  contact to DB
-$sql = 'INSERT INTO contacts (contact_firstname,contact_lastname,contact_email,phone_1,phone_2,phone_3) VALUES($contact_firstname,$contact_lastname,$contact_email,$phone_1,$phone_2,$phone_3)';
-
-
 // construct phone number
 $contact_phone = $phone_1.$phone_2.$phone_3;
+
+// add  contact to DB
+$sql = "INSERT INTO contacts (contact_firstname,contact_lastname,contact_email,contact_phone) VALUES('$contact_firstname','$contact_lastname','$contact_email',$contact_phone)";
+
 //Connect to DB
 $conn = new mysqli('localhost','root','','mycontacts');
 
@@ -49,4 +51,4 @@ $conn->query($sql);
 $conn->close();
 
 // Set Location header
-//header('location:./?p=add_contact');
+header('location:./?p=list_contacts');
