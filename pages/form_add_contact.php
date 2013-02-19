@@ -1,6 +1,6 @@
 <h2>Add a Contact</h2>
 
-<form class="form-horizontal" action="./?p=add_contact" method="post">
+<form class="form-horizontal" action="actions/add_contact.php" method="post">
 	  <div class="control-group">
 	  <label class="control-label" for="contact_firstname">Contact Name</label>
 	  	<div class="controls">
@@ -25,7 +25,7 @@
 	  </div>
 	  <div class="form-actions">
 	  	<button type="submit" class="btn btn-primary"><i class="icon-plus-sign"></i> Add</button>
-	  	<button value="./?p=list_contacts" type="button" class="btn">Cancel</button>
+	  	<button onclick="window.history.go(-1)" type="button" class="btn">Cancel</button>
 	  </div>
   </form>
 

@@ -1,4 +1,6 @@
-
+h3 {
+color:#A30707;
+	}
 header {
 	background:transparent url(img/contact.png) no-repeat;
 	padding:20px 0px 30px 200px;
@@ -15,7 +17,7 @@ header a {
 }
 
 header a:hover {
-	-webkit-transform:skew(3deg,8deg);
+	-webkit-transform:skew(20deg,-6deg);
 	color:#AD0000;
 	text-decoration:none;
 }

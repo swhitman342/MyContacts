@@ -51,4 +51,4 @@ $conn->query($sql);
 $conn->close();
 
 // Set Location header
-header('location:./?p=list_contacts');
+header('location:../?p=list_contacts');

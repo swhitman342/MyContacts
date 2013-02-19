@@ -1,32 +1,37 @@
 <?php 
-//	$conn = new mysqli('localhost','root','','mycontacts');
+	$conn = new mysqli('localhost','root','','mycontacts');
 
-//$sql = "SELECT * FROM contacts WHERE contact_id={$_GET['id']}";
-//$results = $conn->query($sql);
+$sql = "SELECT * FROM contacts WHERE contact_id={$_GET['id']}";
+$results = $conn->query($sql);
 
-//$contact = $results->fetch_assoc();
-//Extract($contact);
-//extract($contact);
+$contact = $results->fetch_assoc();
 
-//$conn->close();
+extract($contact);
 
+$conn->close();
+ 
+$contact_id = $_GET['id'];
 ?>
 
-<h3>Edit Contact: <?php echo '$contact_firstname'.'$contact__lastname' ?></h3>
 
- <form class="form-horizontal" action="./?p=add_contact" method="post">
+<h3>Edit Contact: <?php echo "$contact_firstname".' ',"$contact_lastname"?> </h3>
+
+ 
+ <form class="form-horizontal" action="actions/edit_contact.php" method="post">
+
+<input type="hidden" value="<?php echo $contact_id ?>" name="contact_id">
 	  <div class="control-group">
 	  <label class="control-label" for="contact_firstname">Contact Name</label>
 	  	<div class="controls">
-	  	<input type="text" value="<?php "$contact_firstname"?>">,
-	  	<input type="text" value="<?php "$contact_lastname"?>">,
+	  		<?php echo input('contact_firstname','first name',$contact_firstname) ?>
+	  		<?php echo input('contact_lastname','last name',$contact_lastname) ?>
 	  	
 	    </div>
 	  </div>
 	  <div class="control-group">
 	  <label class="control-label" for="contact_email">Email</label>
 	  	<div class="controls">
-	  		<input type="text" value="<?php "$contact_email"?>">,
+	  		<?php echo input('contact_email','Email',$contact_email) ?>
 	    </div>
 	  </div>
 	   <div class="control-group">
@@ -35,15 +40,13 @@
 	<!--   (<input type="text" name="phone_1" value="$_POST['$phone_1']">)
 	  		<input type="text" name="phone_2" placeholder="555">-
 	  		<input type="text" name="phone_3" placeholder="8899">-->
-	  		(<input type="text" value="<?php "$phone_1"?>">)
-	  		<input type="text" value="<?php "$$phone_2"?>">-
-	  		<input type="text" value="<?php "$$phone_3"?>">
+	  		<?php echo input('contact_phone','xxxxxxxxxx',$contact_phone) ?>
 	    </div>
 	  </div>
 	  </div>
 	  <div class="form-actions">
-	  	<button type="submit" class="btn btn-primary"><i class="icon-plus-sign"></i> Add</button>
-	  	<button value="./?p=list_contacts" type="button" class="btn">Cancel</button>
+	  	<button onclick="<?php echo "./?p=edit_contact&id=$contact_id" ?>" type="submit" class="btn btn-warning"><i class="icon-edit"></i> Update</button>
+	  <button onclick="window.history.go(-1)" type="button" class="btn">Cancel</button>
 	  </div>
   </form>
 
