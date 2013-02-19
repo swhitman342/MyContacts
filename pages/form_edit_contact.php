@@ -25,7 +25,6 @@ $contact_id = $_GET['id'];
 	  	<div class="controls">
 	  		<?php echo input('contact_firstname','first name',$contact_firstname) ?>
 	  		<?php echo input('contact_lastname','last name',$contact_lastname) ?>
-	  	
 	    </div>
 	  </div>
 	  <div class="control-group">

@@ -1,5 +1,4 @@
 
-<pre>POST: <?php print_r($_POST)?></pre>
 <?php 
 
 extract($_POST);
@@ -13,4 +12,4 @@ $sql = "UPDATE contacts
 $conn->query($sql);
 $conn->close();
 
-//header("location:../?p=list_contacts");
+header("location:../?p=list_contacts");
