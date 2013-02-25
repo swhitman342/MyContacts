@@ -1,6 +1,22 @@
 h3 {
 color:#A30707;
+padding:10px 0px 10px 10px;
+background-color:#ADF7E5;
+margin-right:280px;
+border:.5px dashed #367FF5;
+border-radius:15px;
 	}
+	
+h3 a {
+color:#0F06BA;
+}
+
+h2 {
+	background-color:#EBEB1A;
+	border-radius:12px;
+	padding:10px 0px 10px 10px;
+	margin-right:700px;
+}
 header {
 	background:transparent url(img/contact.png) no-repeat;
 	padding:20px 0px 30px 200px;
@@ -22,6 +38,21 @@ header a:hover {
 	text-decoration:none;
 }
 
+ul{
+	list-style:none;
+}
+
+ul li a {
+	color:#09E609;
+	font-size:15pt;
+}
+
+ul li a:hover{
+	text-decoration:none;
+	color:#089E08;
+	font-weight:bold;
+	font-size:15pt;
+}
 
 #controls  {
 	width:500px;
@@ -38,11 +69,13 @@ a {
 thead {
 	background-color:#1A0061;
 	border-radius:25px;
+
 }
 th {
  	border-radius:25px;
 	padding:0px 150px 0px 150px;
 	color:#FAF75C;
+	\**padding-bottom:10px;
  }
 
  .form-actions {
@@ -52,7 +85,7 @@ th {
  margin-right:370px;
  }
  
- th:hover {
+th:hover {
  color:#AD0303;
 -webkit-transition:color:5s;}
 

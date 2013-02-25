@@ -14,7 +14,7 @@ $contact_id = $_GET['id'];
 ?>
 
 
-<h3>Edit Contact: <?php echo "$contact_firstname".' ',"$contact_lastname"?> </h3>
+<h3><b> Edit Contact: </b><a><?php echo "$contact_firstname".' ',"$contact_lastname"?></a> </h3> <br/>
 
  
  <form class="form-horizontal" action="actions/edit_contact.php" method="post">
@@ -42,6 +42,46 @@ $contact_id = $_GET['id'];
 	  		<?php echo input('contact_phone','xxxxxxxxxx',$contact_phone) ?>
 	    </div>
 	  </div>
+	   <div class="controls">
+	  	<select name="group_id">
+	  		  <option value="0">Select a group</option>
+	  		 <option value="1">Friends</option>
+	  		<option value="2">Coworkers</option>
+	  		<option value="3">Stalkers</option> 
+	  		  
+	  		 <?php 
+	  		extract($group);
+	  		$conn = new mysqli('localhost','root','','mycontacts');	
+	  		 
+	  		 // query DB
+	  		$conn->query($groups);
+	  		// fetch_assoc();
+	  		$options = array(
+	  				
+	  				'1' => 'Friends',
+	  				'2' => 'CoWorkers',
+	  				'3' => 'Stalkers'				
+	  				);
+	  		
+	  		$options[0] = 'Select a Group';
+	  		
+	  	//	$group_name = array(
+	  				
+	  				
+	  		//		)
+			
+			$options[$group_id]= $group_name;
+	  		 
+	  		echo dropdown('group_id',$options);
+	  		 
+	  		 ?>
+	  		
+	  			<!-- <option value="<?php echo $group_id?>"><?php echo "$group_id" ?></option> -->
+	  		
+	  		<?php 
+	  		 $conn->close();?>
+	  		 </select>
+	 	 </div>
 	  </div>
 	  <div class="form-actions">
 	  	<button onclick="<?php echo "./?p=edit_contact&id=$contact_id" ?>" type="submit" class="btn btn-warning"><i class="icon-edit"></i> Update</button>

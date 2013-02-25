@@ -15,7 +15,7 @@ require('lib/functions.php');
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css"/>
 		<!-- Mybands CSS -->
 		<link rel="stylesheet" type="text/css" href="styles.css"/>
-		<title>MyeMovies</title>
+		<title>MyContacts</title>
 	</head>
 	<body>
 		<div id="wrapper" class="container">
