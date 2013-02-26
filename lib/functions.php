@@ -66,6 +66,41 @@ function dropdown($name, $options){
 	$select .= "</select>";
 	return $select;
 }
+/**
+ * query the provided table for all rows, sorted by name, using the fields table_id and table name
+ * @param unknown_type $table name of DB table
+ * @param unknown_type $default_value value of the first option (1st key in array)
+ * @param unknown_type $default_name name of the first option (1st valuein array)
+ */
+function get_options($table,$default_value='group_id',$default_name='group_name'){
+
+	$options = array($default_value => $default_name);
+		
+	// field names
+	$id_field = $table.'_id';
+	$name_field = $table.'_name';
+	
+	//connect to DB
+	$conn = new mysqli('localhost','root','','mycontacts');
+	
+	// Query table for id's & names
+	$sql = "SELECT {$table}_id, {$table}_name FROM {$table}s ORDER BY {$table}_name";
+	$results = $conn->query($sql);
+	
+	// Loop over result set, adding all rows to $options
+	while(($row = $results->fetch_assoc()) != null) {
+		$key = $row[$id_field];
+		$value = $row[$name_field];
+		$options[$key] = $value;
+	}
+	
+	//closd DB connection
+	$conn->close();
+	
+	// return options
+	return $options;
+}
+
 function radio($name, $options) {
 	$radio='';
 

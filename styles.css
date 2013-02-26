@@ -42,12 +42,12 @@ ul{
 	list-style:none;
 }
 
-ul li a {
+#list_groups tr td a  {
 	color:#09E609;
 	font-size:15pt;
 }
 
-ul li a:hover{
+tr td a:hover{
 	text-decoration:none;
 	color:#089E08;
 	font-weight:bold;
@@ -81,8 +81,7 @@ th {
  .form-actions {
  padding-left:0px;
  background-color:#fff;
- margin-left:370px;;
- margin-right:370px;
+ margin-left:0px;;
  }
  
 th:hover {

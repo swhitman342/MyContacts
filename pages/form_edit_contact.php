@@ -42,50 +42,20 @@ $contact_id = $_GET['id'];
 	  		<?php echo input('contact_phone','xxxxxxxxxx',$contact_phone) ?>
 	    </div>
 	  </div>
-	   <div class="controls">
-	  	<select name="group_id">
-	  		  <option value="0">Select a group</option>
-	  		 <option value="1">Friends</option>
-	  		<option value="2">Coworkers</option>
-	  		<option value="3">Stalkers</option> 
-	  		  
-	  		 <?php 
-	  		extract($group);
-	  		$conn = new mysqli('localhost','root','','mycontacts');	
-	  		 
-	  		 // query DB
-	  		$conn->query($groups);
-	  		// fetch_assoc();
-	  		$options = array(
-	  				
-	  				'1' => 'Friends',
-	  				'2' => 'CoWorkers',
-	  				'3' => 'Stalkers'				
-	  				);
-	  		
-	  		$options[0] = 'Select a Group';
-	  		
-	  	//	$group_name = array(
-	  				
-	  				
-	  		//		)
+	   	<div class="control-group">
+		<label class="control-label" for="group">Group</label>
+		<div class="controls">
+		
+			<?php 
+			$options = get_options('group','0','Select a Group');
+			echo dropdown('group_id',$options);
+			?>
 			
-			$options[$group_id]= $group_name;
-	  		 
-	  		echo dropdown('group_id',$options);
-	  		 
-	  		 ?>
-	  		
-	  			<!-- <option value="<?php echo $group_id?>"><?php echo "$group_id" ?></option> -->
-	  		
-	  		<?php 
-	  		 $conn->close();?>
-	  		 </select>
-	 	 </div>
-	  </div>
+		</div>
+	</div>
 	  <div class="form-actions">
 	  	<button onclick="<?php echo "./?p=edit_contact&id=$contact_id" ?>" type="submit" class="btn btn-warning"><i class="icon-edit"></i> Update</button>
-	  <button onclick="window.history.go(-1)" type="button" class="btn">Cancel</button>
+	    <button onclick="window.history.go(-1)" type="button" class="btn">Cancel</button>
 	  </div>
   </form>
 
