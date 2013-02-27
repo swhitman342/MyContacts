@@ -16,4 +16,10 @@ $sql = "DELETE FROM contacts WHERE contact_id = $_GET[id]";
 $conn->query($sql);
 $conn->close();
 
-Header("location:../?p=list_contacts");
+$_SESSION['message'] = array(
+		'type' => 'success',
+		'text' => 'Contact Successfully Deleted' );
+
+	Header('location:../?p=list_contacts');
+	
+	

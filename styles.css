@@ -51,7 +51,6 @@ tr td a:hover{
 	text-decoration:none;
 	color:#089E08;
 	font-weight:bold;
-	font-size:15pt;
 }
 
 #controls  {
@@ -86,7 +85,7 @@ th {
  
 th:hover {
  color:#AD0303;
--webkit-transition:color:5s;}
+-webkit-transition:color 5s;}
 
 td:hover {
 	background-color:#F1FCB1;
