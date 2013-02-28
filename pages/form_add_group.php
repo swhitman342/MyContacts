@@ -1,6 +1,6 @@
 
 <h2>Add a Group</h2>
-<form class="form-horizontal" action="actions/add_contact.php" method="post">
+<form class="form-horizontal" action="actions/add_group.php" method="post">
 <div class="control-group">
 <label class="control-label" for="group_name">Group Name</label>
 <div class="controls">
@@ -13,3 +13,4 @@
 		</button>
 		<button onclick="window.history.go(-1)" type="button" class="btn">Cancel</button>
 	</div>
+	</form>

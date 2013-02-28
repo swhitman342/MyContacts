@@ -17,7 +17,7 @@ function add($contact){
 	$contact_phone = contact_phone;
 }
 
-function input($name, $placeholder, $value=null, $class='') {
+function input($name, $placeholder, $value, $class='') {
 	if($value == null && isset($_SESSION['POST'][$name])){
 		$value = $_SESSION['POST'][$name];
 

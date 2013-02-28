@@ -11,11 +11,13 @@ h3 a {
 color:#0F06BA;
 }
 
+
 h2 {
 	background-color:#EBEB1A;
 	border-radius:12px;
 	padding:10px 0px 10px 10px;
-	margin-right:700px;
+	margin-right:680px;
+	height:35px;
 }
 header {
 	background:transparent url(img/contact.png) no-repeat;
@@ -68,8 +70,16 @@ a {
 thead {
 	background-color:#1A0061;
 	border-radius:25px;
-
 }
+.input-append {
+	padding-top:5px;
+	margin-bottom:0px;
+}
+
+.navbar-inner {
+	height:42px;
+}
+
 th {
  	border-radius:25px;
 	padding:0px 150px 0px 150px;

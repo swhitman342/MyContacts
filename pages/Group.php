@@ -49,3 +49,4 @@ $group = $results->fetch_assoc();
 	?>
 </tbody>
 </table>
+<a href="./?p=list_contacts"><button>Back To All Contacts</button></a>

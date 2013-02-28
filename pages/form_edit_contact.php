@@ -48,8 +48,10 @@ $contact_id = $_GET['id'];
 		
 			<?php 
 			$options = get_options('group','0','Select a Group');
-			echo dropdown('group_id',$options);
+			echo dropdown('group_id',$options,$group_id	);
 			?>
+			
+			
 			
 		</div>
 	</div>

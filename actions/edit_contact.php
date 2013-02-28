@@ -33,7 +33,7 @@ foreach($required as $r) {
 	}else {
 
 		$_SESSION['message'] = array(
-				'type' => 'success',
+				'type' => 'warning',
 				'text' => 'Contact Successfully Updated'
 		);
 
