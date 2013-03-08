@@ -46,11 +46,13 @@ foreach($required as $r) {
 // construct phone number
 $contact_phone = $phone_1.$phone_2.$phone_3;
 
+
+$conn = new mysqli('localhost','root','','mycontacts');
 // add  contact to DB
 $sql = "INSERT INTO contacts (contact_firstname,contact_lastname,contact_email,contact_phone,group_id) VALUES('$contact_firstname','$contact_lastname','$contact_email','$contact_phone',$group_id)";
 
 //Connect to DB
-$conn = new mysqli('localhost','root','','mycontacts');
+
 
 // query DB
 $conn->query($sql);

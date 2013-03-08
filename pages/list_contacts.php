@@ -41,7 +41,7 @@ if(isset($_GET['q']) && $_GET['q'] != '' ){
 	
 	// Loop over result set, display contacts
 	while(($contact = $results->fetch_assoc()) != null) {
-		Extract($contact);
+		extract($contact);
 		?>
 		<tr>
 		
